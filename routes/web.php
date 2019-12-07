@@ -14,3 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/home", "HomeController@home");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get("/somos",function(){
+  return view("somos");
+});
+Route::get("/contacto",function(){
+  return "contacto";
+});
+Route::get("/productos","ProductosController@listado");
+
+Route::get("/detalle",function(){
+  return "detalle";
+});
